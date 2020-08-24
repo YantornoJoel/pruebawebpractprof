@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import axios from "axios";
-import { Link } from "react-router-dom";
-
-
-import DatePicker from "react-datepicker";
+import axios from "axios"; //Libreria para realizar peticiones HTTP
+// import { Link } from "react-router-dom";
+import DatePicker from "react-datepicker"; //Formato que muestra la fecha
 import "react-datepicker/dist/react-datepicker.css";
 
 
@@ -20,6 +18,7 @@ export default class article extends Component {
     
   };
 
+  //Componente que carga antes de que se muestre la pagina del frontend
   async componentDidMount() {
     if (this.props.match.params.id) {
       const res = await axios.get(

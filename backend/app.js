@@ -7,7 +7,6 @@ var cors= require('cors')
 
 const passport = require('passport')
 const session= require('express-session')
-require('./config/passport')
 
 //Ejecutar express para http
 var app = express();
@@ -15,17 +14,6 @@ var app = express();
 //Cargar archivos rutas
 var article_routes = require('./routes/article');
 var user_routes = require('./routes/user')
-
-
-
-// // Para permitir usuarios y almacenarlos temporalmente
-app.use(session({
-    secret: 'mysecretapp',
-    resave: true,
-    saveUninitialized: true
-}))
-app.use(passport.initialize())
-app.use(passport.session())
 
 
 //Cargar Middlewades

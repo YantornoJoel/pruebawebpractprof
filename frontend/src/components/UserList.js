@@ -35,17 +35,17 @@ export default class UserList extends Component {
                 <div className="container  "  >
                 {this.state.users.map(user => (
                     <div  className="row mt-4 p-5 "key={user._id}>
-                        <div class="col-md-3 " >
+                        <div className="col-md-3 " >
                             
-                            <div class="card" id="tarjeta">
-                                <div class="card-body">
+                            <div className="card" id="tarjeta">
+                                <div className="card-body">
                                 <button 
                                         className="btn btn-danger"
                                         id="btn-deletee"
                                         onClick= {() => this.deleteUser(user._id) }>
                                           X
                                     </button>
-                                    <h4 class="card-title d-flex justify-content-between align-items-center">
+                                    <h4 className="card-title d-flex justify-content-between align-items-center">
                                         {user.name}
                                     </h4>
                                     <p>{user.email}</p>

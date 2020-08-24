@@ -35,5 +35,3 @@ function App() {
 }
 
 export default App;
-//  Hacer barra nav de bootstrap
-//  Hacer el diseñp del login con clases bootstrap

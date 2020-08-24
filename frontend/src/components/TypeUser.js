@@ -7,7 +7,7 @@ export default class TypeUser extends Component {
         return (
             <Fragment>
                 <div className="container p-5">
-                    <li class="list-group-item mb-5">Elija el tipo de usuario.</li>
+                    <li className="list-group-item mb-5">Elija el tipo de usuario.</li>
 
                     <div className="card mb-4" >
                         <div className="card-body">

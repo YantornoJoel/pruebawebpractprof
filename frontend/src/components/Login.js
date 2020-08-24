@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import logo from '../logos/descarga2.jpg'
 import '../App.css';
 
@@ -13,7 +13,7 @@ export default class Login extends Component {
             <div className="card-header">
                 <h1>Ingresar</h1>
             </div>
-            <img src={logo} className="rounded-circle mx-auto d-block" />
+            <img src={logo} className="rounded-circle mx-auto d-block" alt="Imagen"/>
             <div className="card-body">
                 <form action="/users/signin" method="POST">
                     <div className="form-group">
