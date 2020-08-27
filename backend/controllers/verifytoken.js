@@ -2,7 +2,8 @@ const jwt = require('jsonwebtoken'); //Token que se usa para permitir accesos a 
 const config = require('../config');
 
 async function verifytoken(req, res, next) {
-    const token = req.headers['ponertoken']; //Lo que se usa en postman para ingresar el token obtenido
+    const token = req.headers["token"]; //Lo que se usa en postman para ingresar el token obtenido
+   
     if (!token) {
         return res.status(401).send({ auth: false, message: 'No iniciaste sesión' });
     }

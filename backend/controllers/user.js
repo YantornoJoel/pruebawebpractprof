@@ -173,14 +173,19 @@ var controller = {
             return res.status(401).send("Contraseña incorrecta")
 
         }
-        const token = jwt.sign({ id: user.id }, config.secret, {
-            expiresIn: 60 * 60 * 4
+        var token = jwt.sign({ id: user.id }, config.secret, {
+            expiresIn: 60 * 1 * 10
         });
-        res.status(200).json({ auth: true, token })
+        res.status(200).json({ auth: true, token  })
+        console.log("El token es: ", token)
+        
+        
     },
 
 
     perfil: async (req, res) => {
+        const eltoken= req.headers.token
+        console.log("Perfil", eltoken)
         //Perfil en el que muestra los datos del usuario loguado, excepto la contraseña
         const user = await User.findById(req.userId, { password: 0 });
         if (!user) {

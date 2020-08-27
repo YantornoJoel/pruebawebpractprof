@@ -21,7 +21,7 @@ export default class TypeUser extends Component {
                         <div className="card-body">
                             <h3 className="card-title pb-2">Tipo Administrador</h3>
                             <p className="card-text pb-3">Texto de ejemplo en el que se puede poner una descripcion de lo que hace este tipo de usuario. </p>
-                            <Link to="/login" className="btn btn-success btn-sm card-link ">Iniciar Sesión</Link>
+                            <Link to="/signin" className="btn btn-success btn-sm card-link ">Iniciar Sesión</Link>
                             
                         </div>
                     </div>

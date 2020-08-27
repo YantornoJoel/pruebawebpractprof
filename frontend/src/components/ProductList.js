@@ -6,20 +6,42 @@ import iconedit from '../logos/iconedit.svg'
 
 export default class Index extends Component {
   state = {
-    articles: []
+    articles: [],
+    token: false
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     this.getArticles()
     //console.log(this.state.articles)
-  }
+    
 
+     
+
+      const token = localStorage.getItem('token')
+      console.log("El valor del token obtenido es: ", token)
+
+      await axios.get("http://localhost:3900/user/perfil/2", { headers: { 'token': token }, mode: 'cors' })
+          .then((res) => {
+              console.log("Res es: ", res.data)
+              this.setState({
+               
+                  token: true
+              })
+          }).catch((err) => { console.log("El error es :", err) })
+
+        }
+
+
+
+
+  
 
 
   getArticles= async () => {
     const res = await axios.get("http://localhost:3900/api/articles/");
     this.setState({articles: res.data.articles});
     console.log(res.data.articles)
+    
   }
 
 
@@ -31,7 +53,7 @@ export default class Index extends Component {
   
 
   render() {
-    
+    if(this.state.token){
     return (
       <div className="card fondo  container mx-auto">
         
@@ -94,6 +116,44 @@ export default class Index extends Component {
     </div>
    
     );
+  }else{
+    return(
+      <div className="card fondo  container mx-auto">
+        
+
+      <div className=" container ">
+        <section id="content" className="container">
+          
+          <h2 className=" subheader mb-5 mt-5 ">
+              Todos los productos
+             
+          </h2>
+          
+          
+
+  
+          {
+            this.state.articles.map(article => ( 
+                <div className="mb-5 mt-5 " id="article" key={article._id} >
+             <article className="article-item" id="article-template"  > 
+              <div className="image-wrap  ">
+                <img src={article.image} alt="Producto"className=" d-flex" />
+              </div>
+              <h2 className="display-block ">{article.title}</h2>
+              <h6 className="display-block">{article.content}</h6>
+              <span className="date d-block float-right">{format(article.date)}</span>
+              <Link to={"/productdate/" + article._id} className="btn btn-dark mt-2">Ver más</Link>
+              <div className="clearfix"></div>
+            </article>
+            <hr/>
+            </div>
+                ))}
+        </section>
+      </div>      
+    </div>
+   
+    )
+  }
   }
  
 }

@@ -14,6 +14,10 @@ import TypeUser from './components/TypeUser'
 import TypeUserC from './components/TypeUserC'
 import Product from './components/Product'
 import ProductList from './components/ProductList'
+import Perfil from './components/Perfil'
+
+
+
 
 
 function App() {
@@ -30,6 +34,7 @@ function App() {
       <Route path= "/createuser" exact component= {CreateUser} />
       <Route path= "/signin" exact component= {Login} />
       <Route path= "/userlist" exact component= {UserList} />
+      <Route path= "/perfil" exact component= {Perfil} />
     </Router>
   );
 }

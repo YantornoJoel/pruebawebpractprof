@@ -20,7 +20,7 @@ router.get("/allusers/:last?", UserController.getUsers);
 router.get("/user/:id", UserController.getUser)
 router.delete("/delete/:id", UserController.delete)
 router.post('/signin', UserController.signin);
-router.get("/perfil", verifytoken, UserController.perfil)
+router.get("/perfil/:token",  verifytoken ,UserController.perfil)
 
 
 

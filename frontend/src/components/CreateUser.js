@@ -12,7 +12,8 @@ export default class CreateUser extends Component {
         email: "",
         password: "",
         confirmpassword: "",
-        id: ""
+        id: "",
+        error: "Las contraseñas no coinciden"
     };
 
 
@@ -30,11 +31,12 @@ export default class CreateUser extends Component {
         if (this.state.password === this.state.confirmpassword) {
             await axios.post("http://localhost:3900/user/save", newUser);
             console.log(this.state)
-            this.props.history.push("/");
+            this.props.history.push("/signin");
         } else {
-            alert("Las contraseñas no coinciden")
-            console.log("Las contraseñas no coinciden?")
+            alert("La contraseña", "titulo")
+
         }
+        console.log(this.state.error)
     };
 
     //Actualiza el estado con los valores ingresados en el body
@@ -53,6 +55,7 @@ export default class CreateUser extends Component {
     render() {
         return (
             <Fragment>
+                
                 <div className="row pt-5 login">
                     <div className="col-md-4 mx-auto login">
                         <div className="card mt-4 text-center login-menu">
