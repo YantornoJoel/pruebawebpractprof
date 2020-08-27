@@ -22,14 +22,12 @@ export default class Login extends Component {
             password: this.state.password
         };
 
-      
 
         if (this.state.email  && this.state.password ) {
            const res = await axios.post("http://localhost:3900/user/signin", loginUser);
-        
+          
             const entoken= res.data.token
-            console.log("Entoken: ", entoken)
-           
+            
             const ress= await axios.get("http://localhost:3900/user/perfil/2", {headers: {'token' : entoken}, mode: 'cors'})
             .then( (res) => {
                 console.log(res.data)
@@ -38,12 +36,11 @@ export default class Login extends Component {
                 console.log("El token es: ", localStorage.getItem('token'))
                 
             }).catch((err) => {console.log("El error es :", err)})
-
         
 
             this.props.history.push("/perfil");
         } else { 
-           alert("Email o contraseña incorrectos")     
+           alert("Email y/o contraseña incompletos")     
            
         }
     };
@@ -57,9 +54,6 @@ export default class Login extends Component {
 
 
     render() {
-      
-
-        
         return (
             <Fragment>
                 <div className="row p-4 login ">

@@ -174,7 +174,7 @@ var controller = {
 
         }
         var token = jwt.sign({ id: user.id }, config.secret, {
-            expiresIn: 60 * 1 * 10
+            expiresIn: 60 * 1 * 5
         });
         res.status(200).json({ auth: true, token  })
         console.log("El token es: ", token)

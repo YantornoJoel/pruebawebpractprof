@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
@@ -22,6 +22,7 @@ import Perfil from './components/Perfil'
 
 function App() {
   return (
+    <Fragment>
     <Router>
       <Nav/>
 
@@ -36,6 +37,8 @@ function App() {
       <Route path= "/userlist" exact component= {UserList} />
       <Route path= "/perfil" exact component= {Perfil} />
     </Router>
+    
+    </Fragment>
   );
 }
 

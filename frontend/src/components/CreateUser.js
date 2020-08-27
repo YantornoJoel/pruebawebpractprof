@@ -12,8 +12,6 @@ export default class CreateUser extends Component {
         email: "",
         password: "",
         confirmpassword: "",
-        id: "",
-        error: "Las contraseñas no coinciden"
     };
 
 
@@ -33,10 +31,10 @@ export default class CreateUser extends Component {
             console.log(this.state)
             this.props.history.push("/signin");
         } else {
-            alert("La contraseña", "titulo")
+            alert("Las contraseñas no coinciden")
 
         }
-        console.log(this.state.error)
+
     };
 
     //Actualiza el estado con los valores ingresados en el body
@@ -55,7 +53,7 @@ export default class CreateUser extends Component {
     render() {
         return (
             <Fragment>
-                
+
                 <div className="row pt-5 login">
                     <div className="col-md-4 mx-auto login">
                         <div className="card mt-4 text-center login-menu">

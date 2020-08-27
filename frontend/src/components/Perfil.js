@@ -1,13 +1,10 @@
 import React, { Component, Fragment } from 'react'
-// import { perfil } from '../../../backend/controllers/user';
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 
-import Login from './Login'
 
 export default class Perfil extends Component {
-
 
     state = {
         _id: "",
@@ -16,32 +13,14 @@ export default class Perfil extends Component {
         token: false
     }
 
-
-
-    //  HACER FUNCIONAR EL PERFIL, EL ACCESO A PERFIL, EL TOKEN QUE FUNCIONE EN EL FRONTEND
     async componentDidMount() {
-
-        // const res = await axios.get(
-        //   "http://localhost:3900/user/perfil/1" 
-        // );
-        // console.log(res.data);
-        // console.log(res.body)
-        // this.setState({
-        //   name: res.data.user.name,
-        //   email: res.data.user.email,
-
-        // // });
-
-        // VER COMO PÁSAR ESTADOS DE UN COMPONENTE A OTRO PARA EL TOKEN
-        // const loginn= <Login data={this.state}/>
-        // console.log("Los datos son: ", loginn.data)
-
+      
         const token = localStorage.getItem('token')
         console.log("El valor del token obtenido es: ", token)
 
         await axios.get("http://localhost:3900/user/perfil/2", { headers: { 'token': token }, mode: 'cors' })
             .then((res) => {
-                console.log("Res es: ", res.data)
+                console.log("Los datos obtenidos son: ", res.data)
                 this.setState({
                     name: res.data.name,
                     email: res.data.email,
