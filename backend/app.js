@@ -5,8 +5,7 @@ var express= require("express");
 var bodyParser= require ("body-parser");
 var cors= require('cors')
 
-const passport = require('passport')
-const session= require('express-session')
+
 
 //Ejecutar express para http
 var app = express();
@@ -22,20 +21,6 @@ app.use(bodyParser.json()); //Convierte cualquier peticion en formato json
 app.use(cors())
 
 
-//Var globales
-
-
-
-// app.use((req, res, next) =>{
-//         res.header("Access-Control-Allow-Origin", "*");
-// 		res.header("Access-Control-Allow-Credentials", "true");
-// 		res.header("Access-Control-Max-Age", "1800");
-// 		res.header("Access-Control-Allow-Headers", "content-type");
-// 		res.header("Access-Control-Allow-Methods","PUT, POST, GET, DELETE, PATCH, OPTIONS");
-// 		// res.setHeader("Content-Type", "application/json;charset=utf-8");
-// next()
-// }
-// )
 
 //Añadir prefijos a las rutas
 app.use("/api", article_routes); //permite acceder y cargar las rutas

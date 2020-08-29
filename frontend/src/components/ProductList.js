@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 import {format} from 'timeago.js'
 import iconedit from '../logos/iconedit.svg'
 
+
+
+import axiosCreate from './axiosCreate'
+
 export default class Index extends Component {
   state = {
     articles: [],
@@ -11,30 +15,23 @@ export default class Index extends Component {
   }
 
   async componentDidMount() {
-    this.getArticles()
-    //console.log(this.state.articles)
-    
-
-     
+    this.getArticles()     
 
       const token = localStorage.getItem('token')
       console.log("El valor del token obtenido es: ", token)
 
-      await axios.get("http://localhost:3900/user/perfil/2", { headers: { 'token': token }, mode: 'cors' })
-          .then((res) => {
-              console.log("Res es: ", res.data)
-              this.setState({
+
+
+        axiosCreate('/perfil/1', { headers: { 'token': localStorage.getItem('token') } })
+        .then((res) => {
+            this.setState({
                
-                  token: true
-              })
-          }).catch((err) => { console.log("El error es :", err) })
-
-        }
+                token: true
+            })
+        }).catch((err) => { console.log("El error es :", err) })
 
 
-
-
-  
+      }
 
 
   getArticles= async () => {

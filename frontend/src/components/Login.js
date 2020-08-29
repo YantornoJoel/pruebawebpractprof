@@ -4,7 +4,7 @@ import logo from '../logos/descarga2.jpg'
 import '../App.css';
 import axios from 'axios'
 
-
+import axiosCreate from './axiosCreate'
 
 
 export default class Login extends Component {
@@ -27,16 +27,18 @@ export default class Login extends Component {
            const res = await axios.post("http://localhost:3900/user/signin", loginUser);
           
             const entoken= res.data.token
-            
-            const ress= await axios.get("http://localhost:3900/user/perfil/2", {headers: {'token' : entoken}, mode: 'cors'})
-            .then( (res) => {
-                console.log(res.data)
-                this.setState({valortoken: entoken})
-                localStorage.setItem('token', entoken)
-                console.log("El token es: ", localStorage.getItem('token'))
+            localStorage.setItem('token', entoken)
+
+            // const ress= await axios.get("http://localhost:3900/user/perfil/2", {headers: {'token' : localStorage.getItem('token')}, mode: 'cors'})
+            // .then( (res) => {
+            //     console.log(res.data)
+            //     this.setState({valortoken: entoken})
+            //     // localStorage.setItem('token', entoken)
+            //     console.log("El token es: ", localStorage.getItem('token'))
                 
-            }).catch((err) => {console.log("El error es :", err)})
+            // }).catch((err) => {console.log("El error es :", err)})
         
+            axiosCreate('/perfil/1', {headers: {'token' : localStorage.getItem('token')}})
 
             this.props.history.push("/perfil");
         } else { 
