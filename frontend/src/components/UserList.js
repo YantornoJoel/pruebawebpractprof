@@ -5,13 +5,19 @@ import '../App.css'
 
 export default class UserList extends Component {
     state = {
-        users: []
+        users: [],
+        list: false
     }
 
     componentDidMount() {
-    
+        this.setState({list: true})
         this.getUsers()
     }
+
+    componentWillUnmount() {
+        this.setState({list: false})
+      }
+    
     
 
     getUsers = async () => {

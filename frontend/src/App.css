@@ -22,6 +22,44 @@ body{
   border-bottom-right-radius: 5%;
 }
 
+.perfil{
+  border-radius: 5%;
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+  background: rgb(50, 74, 78);
+}
+
+.color-fondo-perfil{
+  background: rgb(85, 84, 84);
+}
+
+.btn-perfil-delete{
+  margin-left: 320px;
+  margin-top: 20px;
+  background: rgb(211, 10, 10);
+  color: #eee;
+}
+.btn-perfil-delete:hover{
+  background: rgb(241, 18, 18);
+  color: rgb(230, 230, 230);
+  border: rgb(46, 45, 45) 1px solid;
+  transform: scale(1.1);
+}
+
+.linea-datos {
+  height: 4px;
+  width: 70%;
+  margin-top: -4px;
+  background-color: rgb(61, 60, 60);
+}
+
+.nav-user:hover{
+  background: rgb(46, 44, 44);
+  color: rgb(255, 255, 255) ;
+}
+
+
+
 
 #tarjeta{
   border-radius: 10%;

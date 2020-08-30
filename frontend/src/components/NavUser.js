@@ -35,13 +35,13 @@ export default class Nav extends Component {
     onSubmit = async (e) => {
         e.preventDefault();
         localStorage.removeItem('token')
-        
-      
+
+
     }
 
-   
+
     render() {
-       
+
         return (
             <Fragment>
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -65,22 +65,24 @@ export default class Nav extends Component {
                                     <Link className="nav-link" to="/perfil">{this.state.email}</Link>
                                 </li> */}
 
-                                <li className="nav-item dropdown">
+                                <li className="nav-item dropdown ">
                                     <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         {this.state.email}
                                     </Link>
                                     <div className="dropdown-menu " aria-labelledby="navbarDropdown">
-                                        <button className="dropdown-item">
-                                        <Link className="dropdown-item" to="/perfil">Ver perfil</Link>
+                                        <button className="dropdown-item nav-user">
+                                            <Link className="dropdown-item nav-user" to="/perfil">Ver perfil</Link>
                                         </button>
                                         <div className="dropdown-divider"></div>
 
-                                    <form onSubmit={this.onSubmit}>
-                                        {/* <Link to="/Joel" type="submit">Cerrar</Link> */}
-                                        <button type="submit" className="dropdown-item" onClick={this.onSubmit}><Link className="dropdown-item" to="/" type="submit">Cerrar Sesion</Link></button>
-                                    </form>
+                                        <form onSubmit={this.onSubmit}>
+                                            {/* <Link to="/Joel" type="submit">Cerrar</Link> */}
+                                            <button type="submit" className="dropdown-item nav-user" onClick={this.onSubmit}>
+                                                <Link className="dropdown-item nav-user" to="/" type="submit">Cerrar sesión</Link>
+                                            </button>
+                                        </form>
 
-                            {/* <button type="submit" className="dropdown-item" onClick={this.onSubmit}  >Cerrar Sesión</button> */}
+                                        {/* <button type="submit" className="dropdown-item" onClick={this.onSubmit}  >Cerrar Sesión</button> */}
                                         {/* btn btn-dark nav-link */}
                                     </div>
                                 </li>
@@ -90,8 +92,8 @@ export default class Nav extends Component {
                 </nav >
             </Fragment >
         )
-        
-    
-        
-        }
+
+
+
+    }
 }

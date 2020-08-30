@@ -83,7 +83,7 @@ export default class CreateUser extends Component {
                                             required />
                                     </div>
                                     <div className="form-group">
-                                        <button type="submit" className="btn btn-primary btn-block">Crear</button>
+                                        <button type="submit" className="btn btn-success btn-block">Crear</button>
                                     </div>
                                 </form>
                             </div>

@@ -3,6 +3,7 @@ import axios from 'axios'
 // import { Link } from 'react-router-dom'
 
 import axiosCreate from './axiosCreate'
+// import '../App.css'
 
 export default class Perfil extends Component {
 
@@ -10,11 +11,12 @@ export default class Perfil extends Component {
         _id: "",
         email: "",
         name: "",
-        token: false
+        token: false,
+        list: false
     }
 
     async componentDidMount() {
-
+        this.setState({list: true})
         const token = localStorage.getItem('token')
         console.log("El valor del token obtenido es: ", token)
 
@@ -38,13 +40,12 @@ export default class Perfil extends Component {
                     token: true
                 })
             }).catch((err) => { console.log("El error es :", err) })
-
-
-
-
-
     }
 
+    
+    componentWillUnmount() {
+        this.setState({list: false})
+      }
 
 
 
@@ -76,21 +77,36 @@ export default class Perfil extends Component {
             return (
                 <Fragment>
 
-                    <div className="card fondo  container mx-auto mt-5">
+                    <div className="perfil  mt-5 container p-5 ">
 
 
 
-                        <div className="container m-5">
+                        <div className="  col-md-10 mx-auto perfil">
+                            <h1 className=" text-white text-center">Datos personales</h1>
+                            <hr className="linea-datos"/>
+                            <div className="mt-5 text-white">
 
-                            <h4 className="card-title d-flex justify-content-between align-items-center">
-                                {this.state.name}
-                            </h4>
-                            <p>{this.state.email}</p>
-                            <p>{this.state._id}</p>
+                            <h5 className="d-inline-flex mt-1">ID usuario: </h5>
+                            <p className="d-inline-flex ml-3">{this.state._id}</p>
+                            <hr/>
 
-                            <button className="btn btn-danger " onClick={() => this.deleteUser(this.state._id)}>
+                            <h5 className="d-inline-flex mt-2">Nombre: </h5>
+                               <p className="d-inline-flex ml-3">{this.state.name} </p>
+                            
+                            <hr/>
+
+                            <h5 className="d-inline-flex mt-2">Email: </h5>
+                            <p className="d-inline-flex ml-3">{this.state.email}</p>
+                            <hr/>
+
+                            <button className="btn  btn-lg  btn-perfil-delete " onClick={() => this.deleteUser(this.state._id)}>
                                 Borrar usuario
                                     </button>
+                            </div>
+
+                        
+
+                                
                         </div>
 
 
