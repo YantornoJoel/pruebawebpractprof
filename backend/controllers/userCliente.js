@@ -4,12 +4,12 @@ var validator = require('validator');
 
 var fs = require('fs');
 var path = require('path');
-var User = require('../models/User');
+var UserCliente = require('../models/UserCliente');
 
-const verifytoken = require('./verifytoken')
+const verifytokenCliente = require('./verifytokenCliente')
 
 const jwt = require('jsonwebtoken');
-const config = require('../config');
+const config = require('../configCliente');
 
 
 
@@ -31,7 +31,7 @@ var controller = {
         } catch (err) {
             return res.status(200).send({
                 status: "error",
-                message: "Faltan datos p1or enviar",
+                message: "Faltan datos por enviar2",
             });
         }
 
@@ -39,7 +39,7 @@ var controller = {
 
         if (validate_name && validate_apellido && validate_email && validate_password && validate_confirmpassword && validate_telefono && validate_pais && validate_provincia && validate_documento) {
             //Crear el objeto a guardar
-            var user = new User();
+            var user = new UserCliente();
 
             //Asignar valores al objeto
             user.name = params.name;
@@ -86,7 +86,7 @@ var controller = {
     },
 
     getUsers: (req, res) => {
-        const query = User.find({});
+        const query = UserCliente.find({});
 
         var last = req.params.last;
 
@@ -126,7 +126,7 @@ var controller = {
             });
         }
         //Buscar el artículo
-        User.findById(userId, (err, user) => {
+        UserCliente.findById(userId, (err, user) => {
             if (err || !user) {
                 return res.status(404).send({
                     status: "Error",
@@ -146,7 +146,7 @@ var controller = {
         //Tomar el Id de la url
         var userId = req.params.id;
         //Find and delete
-        User.findOneAndDelete({ _id: userId }, (err, userRemoved) => {
+        UserCliente.findOneAndDelete({ _id: userId }, (err, userRemoved) => {
             if (err) {
                 return res.status(200).send({
                     status: "Error",
@@ -172,7 +172,7 @@ var controller = {
 
 
 
-        const user = await User.findOne({ email: email }) //Iguala usuario al email 
+        const user = await UserCliente.findOne({ email: email }) //Iguala usuario al email 
         if (!user) { //Si no existe el usuario(email), manda msj
             return res.status(401).send("El email no esta registrado")
         }
@@ -183,7 +183,6 @@ var controller = {
 
         }
         var token = jwt.sign({ id: user.id }, config.secret, {
-            expiresIn: 60 * 1 * 25
         });
         res.status(200).json({ auth: true, token  })
         console.log("El token es: ", token)
@@ -196,7 +195,7 @@ var controller = {
         const eltoken= req.headers.token
         console.log("Perfil", eltoken)
         //Perfil en el que muestra los datos del usuario loguado, excepto la contraseña
-        const user = await User.findById(req.userId, { password: 0 });
+        const user = await UserCliente.findById(req.userId, { password: 0 });
         if (!user) {
             return res.status(404).send("No user found.");
         }

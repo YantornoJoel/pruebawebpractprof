@@ -58,7 +58,7 @@ export default class article extends Component {
     
     console.log(this.state)
 
-    this.props.history.push("/productlist");
+    this.props.history.push("/api/productlist");
   };
 
   onInputChange = (e) => {

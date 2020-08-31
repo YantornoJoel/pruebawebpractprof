@@ -20,8 +20,8 @@ import Index from './components/Index'
 import Product from './components/Product'
 import ProductList from './components/ProductList'
 import Perfil from './components/Perfil'
-
-
+import LoginAdmin from './components/LoginAdmin'
+import CreateAdmin from './components/CreateAdmin'
 
 
 function App() {
@@ -39,17 +39,19 @@ function App() {
         <Route
           render={props => (
             !localStorage.getItem('token') ?
-              <Route path="/" component={Nav} /> :
-              <Route path="/" component={NavUser} />
+              <Route path="/api" component={Nav} /> :
+              <Route path="/api" component={NavUser} />
           )}
         />
+
+
 
 
         <Route
           render={props => (
             localStorage.getItem('token') ?
-              <Route path="/product" exact component={Product} /> :
-              <Route Route exact path="/" />
+              <Route path="/api/product" exact component={Product} /> :
+              <Route Route exact path="/api" />
           )}
         />
 
@@ -60,14 +62,18 @@ function App() {
 
 
 
-        <Route path="/" exact component={Index} />
+        <Route path="/api/" exact component={Index} />
         {/* <Route path= "/product" exact component= {Product} /> */}
-        <Route path="/product/:id" exact component={Product} />
-        <Route path="/productlist" exact component={ProductList} />
-        <Route path="/createuser" exact component={CreateUser} />
-        <Route path="/signin" exact component={Login} />
-        <Route path="/userlist" exact component={UserList} />
-        <Route path="/perfil" exact component={Perfil} />
+        <Route path="/api/product/:id" exact component={Product} />
+        <Route path="/api/productlist" exact component={ProductList} />
+        <Route path="/api/createuser" exact component={CreateUser} />
+        <Route path="/api/signin" exact component={Login} />
+        <Route path="/api/userlist" exact component={UserList} />
+        <Route path="/api/perfil" exact component={Perfil} />
+
+        <Route path="/admin" exact component={LoginAdmin} />
+        <Route path="/admin/create" exact component={CreateAdmin} />
+
       </Router>
 
     </Fragment>

@@ -4,7 +4,7 @@ import logo from '../logos/descarga2.jpg'
 import '../App.css';
 import axios from 'axios'
 
-import axiosCreate from './axiosCreate'
+import axiosCreateUser from './axiosCreateUser'
 
 
 export default class Login extends Component {
@@ -21,26 +21,38 @@ export default class Login extends Component {
             email: this.state.email,
             password: this.state.password
         };
+        
 
+        // if (this.state.email  && this.state.password ) {
+        //    const res = await axios.post("", loginUser);
+          
+        //     const entoken= res.data.token
+        //     localStorage.setItem('token', entoken)
 
-        if (this.state.email  && this.state.password ) {
-           const res = await axios.post("http://localhost:3900/user/signin", loginUser);
+           
+        
+        //     axiosCreate('/perfil/1', {headers: {'token' : localStorage.getItem('token')}})
+        //     alert("Iniciaste correctamente")
+        //     this.props.history.push("/api");
+        // } else { 
+        //    alert("Email y/o contraseña incompletos")     
+           
+        // }
+        if (loginUser.email  && loginUser.password ) {
+            try{
+
+           const res = await axios.post("http://localhost:3900/userCliente/signin", loginUser);
           
             const entoken= res.data.token
             localStorage.setItem('token', entoken)
+            this.props.history.push("/api/perfil");
+            axiosCreateUser('/perfil/1', {headers: {'token' : localStorage.getItem('token')}})
+            }catch(err){
+            
+                alert("Email y/o contraseña incorrectos")
+            }
 
-            // const ress= await axios.get("http://localhost:3900/user/perfil/2", {headers: {'token' : localStorage.getItem('token')}, mode: 'cors'})
-            // .then( (res) => {
-            //     console.log(res.data)
-            //     this.setState({valortoken: entoken})
-            //     // localStorage.setItem('token', entoken)
-            //     console.log("El token es: ", localStorage.getItem('token'))
-                
-            // }).catch((err) => {console.log("El error es :", err)})
-        
-            axiosCreate('/perfil/1', {headers: {'token' : localStorage.getItem('token')}})
-
-            this.props.history.push("/perfil");
+         
         } else { 
            alert("Email y/o contraseña incompletos")     
            

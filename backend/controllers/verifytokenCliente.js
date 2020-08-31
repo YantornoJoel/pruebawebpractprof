@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken'); //Token que se usa para permitir accesos a alguna pagina
-const config = require('../config');
+const config = require('../configCliente');
 
-async function verifytoken(req, res, next) {
+async function verifytokenCliente(req, res, next) {
     const token = req.headers["token"]; //Lo que se usa en postman para ingresar el token obtenido
    
     if (!token) {
@@ -14,4 +14,4 @@ async function verifytoken(req, res, next) {
 }
 
 
-module.exports = verifytoken;
+module.exports = verifytokenCliente;

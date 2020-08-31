@@ -46,7 +46,7 @@ export default class Nav extends Component {
                 <Fragment>
                     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                         <div className="container">
-                            <Link className="navbar-brand " to="/perfil">App</Link>
+                            <Link className="navbar-brand " to="/api/perfil">App</Link>
                             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                                 <span className="navbar-toggler-icon"></span>
@@ -54,10 +54,10 @@ export default class Nav extends Component {
                             <div className="collapse navbar-collapse" id="navbarNav">
                                 <ul className="navbar-nav">
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="/">Inicio <span className="sr-only">(current)</span></Link>
+                                        <Link className="nav-link" to="/api/">Inicio <span className="sr-only">(current)</span></Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="/userlist">Acerca de</Link>
+                                        <Link className="nav-link" to="/api/userlist">Acerca de</Link>
                                     </li>
                                 </ul>
                                 <ul className="navbar-nav ml-auto">
@@ -71,13 +71,13 @@ export default class Nav extends Component {
                                         </Link>
                                         <div className="dropdown-menu " aria-labelledby="navbarDropdown">
                                             <button className="dropdown-item">
-                                            <Link className="dropdown-item" to="/perfil">Ver perfil</Link>
+                                            <Link className="dropdown-item" to="/api/perfil">Ver perfil</Link>
                                             </button>
                                             <div className="dropdown-divider"></div>
 
                                         <form onSubmit={this.onSubmit}>
                                             {/* <Link to="/Joel" type="submit">Cerrar</Link> */}
-                                            <button type="submit" className="dropdown-item" onClick={this.onSubmit}><Link className="dropdown-item" to="/" type="submit">Cerrar Sesion</Link></button>
+                                            <button type="submit" className="dropdown-item" onClick={this.onSubmit}><Link className="dropdown-item" to="/pruebas" type="submit">Cerrar Sesion</Link></button>
                                         </form>
 
                                 {/* <button type="submit" className="dropdown-item" onClick={this.onSubmit}  >Cerrar Sesión</button> */}
@@ -98,7 +98,7 @@ export default class Nav extends Component {
                     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
 
                         <div className="container">
-                            <Link className="navbar-brand " to="/perfil">App</Link>
+                            <Link className="navbar-brand " to="/api/perfil">App</Link>
                             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                                 <span className="navbar-toggler-icon"></span>
@@ -106,10 +106,10 @@ export default class Nav extends Component {
                             <div className="collapse navbar-collapse" id="navbarNav">
                                 <ul className="navbar-nav">
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="/">Inicio <span className="sr-only">(current)</span></Link>
+                                        <Link className="nav-link" to="/api/">Inicio <span className="sr-only">(current)</span></Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="/userlist">Acerca de</Link>
+                                        <Link className="nav-link" to="/api/userlist">Acerca de</Link>
                                     </li>
 
                                 </ul>
@@ -119,10 +119,10 @@ export default class Nav extends Component {
                                 <ul className="navbar-nav ml-auto">
 
                                     <li className="nav-item ">
-                                        <Link className="nav-link" to="/signin">Iniciar Sesión</Link>
+                                        <Link className="nav-link" to="/api/signin">Iniciar Sesión</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="/createuser">Crear Cuenta</Link>
+                                        <Link className="nav-link" to="/api/createuser">Crear Cuenta</Link>
                                     </li>
                                     {/* <li className="nav-item">
                                     <Link className="nav-link" to="/product">Añadir Producto</Link>

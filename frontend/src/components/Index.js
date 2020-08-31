@@ -13,7 +13,7 @@ export default class Index extends Component {
                         <p className="lead">Subtitulo.</p>
                         <hr className="my-4" />
                         <p>Texto de ejemplo: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam itaque repellat voluptatem neque molestias iste vel nulla unde repellendus non explicabo aperiam est veritatis laborum corrupti, inventore eligendi ab iure!Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam itaque repellat voluptatem neque molestias iste vel nulla unde repellendus non explicabo aperiam est veritatis laborum corrupti, inventore eligendi ab iure!</p>
-                        <Link to="/productlist" className="btn btn-dark btn-lg">Ver productos</Link>
+                        <Link to="/api/productlist" className="btn btn-dark btn-lg">Ver productos</Link>
                     </div>
                 </div>
             </Fragment>

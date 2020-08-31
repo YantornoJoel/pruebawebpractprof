@@ -60,7 +60,7 @@ export default class Index extends Component {
           
           <h2 className=" subheader mb-5 mt-5 ">
               Todos los productos
-              <Link className="float-right btn btn-success btn-sm" to="/product">Añadir producto</Link>
+              <Link className="float-right btn btn-success btn-sm" to="/api/product">Añadir producto</Link>
           </h2>
           
           
@@ -86,13 +86,13 @@ export default class Index extends Component {
                                       onClick= {() => this.deleteArticle(article._id) }>
                                         X
                                   </button>
-                                  <Link to={"/product/" + article._id}> 
+                                  <Link to={"/api/product/" + article._id}> 
                      <img src={iconedit} className="iconoedi" id="iconedit" alt="Imagen"/>    
                                    </Link>
               </div>
 
               <span className="date d-block float-right">{format(article.date)}</span>
-              <Link to={"/productdate/" + article._id} className="btn btn-dark mt-2">Ver más</Link>
+              <Link to={"/api/productdate/" + article._id} className="btn btn-dark mt-2">Ver más</Link>
               
               <div className="clearfix"></div>
             

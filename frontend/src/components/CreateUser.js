@@ -9,9 +9,14 @@ export default class CreateUser extends Component {
     // Se crea un estado para ir asignandole valores
     state = {
         name: "",
+        apellido: "",
         email: "",
+        telefono: "",
         password: "",
         confirmpassword: "",
+        pais: "",
+        provincia: "",
+        documento: ""
     };
 
 
@@ -20,16 +25,21 @@ export default class CreateUser extends Component {
         e.preventDefault(); //Evento por defecto que evita que la pagina se recargue
         const newUser = {
             name: this.state.name,
+            apellido: this.state.apellido,
             email: this.state.email,
             password: this.state.password,
             confirmpassword: this.state.confirmpassword,
+            telefono: this.state.telefono,
+            pais: this.state.pais,
+            provincia: this.state.provincia,
+            documento: this.state.documento
 
         };
 
         if (this.state.password === this.state.confirmpassword) {
-            await axios.post("http://localhost:3900/user/save", newUser);
+            await axios.post("http://localhost:3900/userCliente/save", newUser);
             console.log(this.state)
-            this.props.history.push("/signin");
+            this.props.history.push("/api");
         } else {
             alert("Las contraseñas no coinciden")
 
@@ -68,8 +78,33 @@ export default class CreateUser extends Component {
                                             required />
                                     </div>
                                     <div className="form-group">
+                                        <input type="text" className="form-control" name="apellido" placeholder="Apellido" onChange={this.onInputChange}
+                                            value={this.state.apellido}
+                                            required />
+                                    </div>
+                                    <div className="form-group">
                                         <input type="email" className="form-control" name="email" placeholder="Email" onChange={this.onInputChange}
                                             value={this.state.email}
+                                            required />
+                                    </div>
+                                    <div className="form-group">
+                                        <input type="text" className="form-control" name="telefono" placeholder="Telefono" onChange={this.onInputChange}
+                                            value={this.state.telefono}
+                                            required />
+                                    </div>
+                                    <div className="form-group">
+                                        <input type="text" className="form-control" name="pais" placeholder="País" onChange={this.onInputChange}
+                                            value={this.state.pais}
+                                            required />
+                                    </div>
+                                    <div className="form-group">
+                                        <input type="text" className="form-control" name="provincia" placeholder="Provincia" onChange={this.onInputChange}
+                                            value={this.state.provincia}
+                                            required />
+                                    </div>
+                                    <div className="form-group">
+                                        <input type="text" className="form-control" name="documento" placeholder="Documento" onChange={this.onInputChange}
+                                            value={this.state.documento}
                                             required />
                                     </div>
                                     <div className="form-group">
