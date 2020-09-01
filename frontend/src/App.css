@@ -307,9 +307,18 @@ body{
   color: #06C5CF;
 }
 
+.bottom-aligned {
+  display: flex;
+  align-items: flex-end;
+}
 
-
-
+.fondo-listado-cliente{
+  background: rgb(151, 145, 151);
+  border-radius: 30px;
+}
+.btn-listado-cliente{
+  border-radius: 20px;
+}
 
 
 

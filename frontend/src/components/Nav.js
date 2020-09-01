@@ -41,58 +41,58 @@ export default class Nav extends Component {
 
    
     render() {
-        if (this.state.token) {
-            return (
-                <Fragment>
-                    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                        <div className="container">
-                            <Link className="navbar-brand " to="/api/perfil">App</Link>
-                            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                                <span className="navbar-toggler-icon"></span>
-                            </button>
-                            <div className="collapse navbar-collapse" id="navbarNav">
-                                <ul className="navbar-nav">
-                                    <li className="nav-item">
-                                        <Link className="nav-link" to="/api/">Inicio <span className="sr-only">(current)</span></Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link className="nav-link" to="/api/userlist">Acerca de</Link>
-                                    </li>
-                                </ul>
-                                <ul className="navbar-nav ml-auto">
-                                    {/* <li className="nav">
-                                        <Link className="nav-link" to="/perfil">{this.state.email}</Link>
-                                    </li> */}
+        // if (this.state.token) {
+        //     return (
+        //         <Fragment>
+        //             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        //                 <div className="container">
+        //                     <Link className="navbar-brand " to="/api/perfil">App</Link>
+        //                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        //                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        //                         <span className="navbar-toggler-icon"></span>
+        //                     </button>
+        //                     <div className="collapse navbar-collapse" id="navbarNav">
+        //                         <ul className="navbar-nav">
+        //                             <li className="nav-item">
+        //                                 <Link className="nav-link" to="/api/">Inicio <span className="sr-only">(current)</span></Link>
+        //                             </li>
+        //                             <li className="nav-item">
+        //                                 <Link className="nav-link" to="/api/userlist">Acerca de</Link>
+        //                             </li>
+        //                         </ul>
+        //                         <ul className="navbar-nav ml-auto">
+        //                             {/* <li className="nav">
+        //                                 <Link className="nav-link" to="/perfil">{this.state.email}</Link>
+        //                             </li> */}
 
-                                    <li className="nav-item dropdown">
-                                        <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            {this.state.email}
-                                        </Link>
-                                        <div className="dropdown-menu " aria-labelledby="navbarDropdown">
-                                            <button className="dropdown-item">
-                                            <Link className="dropdown-item" to="/api/perfil">Ver perfil</Link>
-                                            </button>
-                                            <div className="dropdown-divider"></div>
+        //                             <li className="nav-item dropdown">
+        //                                 <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        //                                     {this.state.email}
+        //                                 </Link>
+        //                                 <div className="dropdown-menu " aria-labelledby="navbarDropdown">
+        //                                     <button className="dropdown-item">
+        //                                     <Link className="dropdown-item" to="/api/perfil">Ver perfil</Link>
+        //                                     </button>
+        //                                     <div className="dropdown-divider"></div>
 
-                                        <form onSubmit={this.onSubmit}>
-                                            {/* <Link to="/Joel" type="submit">Cerrar</Link> */}
-                                            <button type="submit" className="dropdown-item" onClick={this.onSubmit}><Link className="dropdown-item" to="/pruebas" type="submit">Cerrar Sesion</Link></button>
-                                        </form>
+        //                                 <form onSubmit={this.onSubmit}>
+        //                                     {/* <Link to="/Joel" type="submit">Cerrar</Link> */}
+        //                                     <button type="submit" className="dropdown-item" onClick={this.onSubmit}><Link className="dropdown-item" to="/pruebas" type="submit">Cerrar Sesion</Link></button>
+        //                                 </form>
 
-                                {/* <button type="submit" className="dropdown-item" onClick={this.onSubmit}  >Cerrar Sesión</button> */}
-                                            {/* btn btn-dark nav-link */}
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </nav >
-                </Fragment >
-            )
+        //                         {/* <button type="submit" className="dropdown-item" onClick={this.onSubmit}  >Cerrar Sesión</button> */}
+        //                                     {/* btn btn-dark nav-link */}
+        //                                 </div>
+        //                             </li>
+        //                         </ul>
+        //                     </div>
+        //                 </div>
+        //             </nav >
+        //         </Fragment >
+        //     )
             
         
-        }else  {
+        // }else  {
             return (
                 <Fragment>
                     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -138,7 +138,7 @@ export default class Nav extends Component {
                 </Fragment>
             )
 
-        }
+        // }
         
     }
 }

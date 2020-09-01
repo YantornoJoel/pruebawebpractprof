@@ -81,38 +81,37 @@ export default class UserList extends Component {
                     </div>
                     ))}
                 </div> */}
-                    <div className=" container mx-auto mt-5 "  >
+                    <div className=" container  mx-auto mt-5 "  >
                         <h1 className="text-center">Lista de usuarios</h1>
-                        <hr className="" />
-                        <div className="d-inline-flex">
-                        {this.state.users.map(user => (
-                            <div className="container  " key={user._id}>
-                                <div >
+                        <hr className="mb-5" />
+                        <div className="row   ">
+                            {this.state.users.map(user => (
+                                <div className="col-lg-3 mt-5 mb-4 text-center card fondo-listado-cliente mr-lg-5 container " key={user._id}>
 
-                                    <div className="">
-                                        
-                                          
-                                            <h4 className="card-title d-flex justify-content-between align-items-center">
-                                                {user.name} {user.apellido}
-                                            </h4>
-                                            <p>{user.email}</p>
-                                            <p>{user.telefono}</p>
+                                    <h4 className="mt-3 card-title justify-content-between align-items-center">
+                                        {user.name} {user.apellido}
+                                    </h4>
+                                    <hr  className="mb-3"/>
+                                        <p className="">{user.email}</p>
+                                    <p className="">{user.telefono}</p>
 
-                                            <button
-                                                className="btn  btn-perfil-delete  btn-sm"
-                                                onClick={() => this.deleteUser(user._id)}>
-                                                Borrar Usuario
+                                    <button
+                                        className=" btn btn-perfil-delete ml-0 mb-3  btn-sm btn-listado-cliente"
+                                        onClick={() => this.deleteUser(user._id)}>
+                                        Borrar Usuario
                                             </button>
-
-                                        </div>
-                                    </div>
-
+                                          
 
                                 </div>
-                         
-                        ))}
-                           </div>
+
+
+
+
+
+                            ))}
+                        </div>
                     </div>
+
 
                 </Fragment>
             )
