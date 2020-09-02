@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/pruebawebpractprof/static/css/main.9c73f142.chunk.css",
+    "main.js": "/pruebawebpractprof/static/js/main.f89f8e22.chunk.js",
+    "main.js.map": "/pruebawebpractprof/static/js/main.f89f8e22.chunk.js.map",
+    "runtime-main.js": "/pruebawebpractprof/static/js/runtime-main.fcfc65c6.js",
+    "runtime-main.js.map": "/pruebawebpractprof/static/js/runtime-main.fcfc65c6.js.map",
+    "static/css/2.b56a0318.chunk.css": "/pruebawebpractprof/static/css/2.b56a0318.chunk.css",
+    "static/js/2.a5468227.chunk.js": "/pruebawebpractprof/static/js/2.a5468227.chunk.js",
+    "static/js/2.a5468227.chunk.js.map": "/pruebawebpractprof/static/js/2.a5468227.chunk.js.map",
+    "index.html": "/pruebawebpractprof/index.html",
+    "precache-manifest.e47310ffaf8cfc10d1e9f4ecf0a7f734.js": "/pruebawebpractprof/precache-manifest.e47310ffaf8cfc10d1e9f4ecf0a7f734.js",
+    "service-worker.js": "/pruebawebpractprof/service-worker.js",
+    "static/css/2.b56a0318.chunk.css.map": "/pruebawebpractprof/static/css/2.b56a0318.chunk.css.map",
+    "static/css/main.9c73f142.chunk.css.map": "/pruebawebpractprof/static/css/main.9c73f142.chunk.css.map",
+    "static/js/2.a5468227.chunk.js.LICENSE.txt": "/pruebawebpractprof/static/js/2.a5468227.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/pruebawebpractprof/static/media/bosque.3ab9f344.jpg",
+    "static/media/iconedit.svg": "/pruebawebpractprof/static/media/iconedit.99576dbd.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fcfc65c6.js",
+    "static/css/2.b56a0318.chunk.css",
+    "static/js/2.a5468227.chunk.js",
+    "static/css/main.9c73f142.chunk.css",
+    "static/js/main.f89f8e22.chunk.js"
+  ]
+}
